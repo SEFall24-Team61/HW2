@@ -12,7 +12,6 @@ permissions:
 
 jobs:
   format_code:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -20,11 +19,11 @@ jobs:
 
     - name: Set up Python 3.13
       run: |
-        sudo apt update -y; 
-        sudo apt upgrade -y; 
-        sudo apt install software-properties-common -y; 
-        sudo add-apt-repository ppa:deadsnakes/ppa -y;
-        sudo apt update -y; 
+        sudo apt update -y
+        sudo apt upgrade -y
+        sudo apt install software-properties-common -y
+        sudo add-apt-repository ppa:deadsnakes/ppa -y
+        sudo apt update -y
         sudo apt install python3.13 -y
 
     - name: Install Python formatter
@@ -35,4 +34,4 @@ jobs:
 
     - name: Run Autopep8 and save diff report
       run: |
-        autopep8 --diff ./*.py > post_traces/autopep8_report.txt
+        autopep8 --diff ./*.py > ./post_traces/autopep8_report.txt
