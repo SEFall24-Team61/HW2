@@ -32,6 +32,9 @@ jobs:
         pip install autopep8
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    - name: Create directory for report
+      run: mkdir -p ./post_traces
+
     - name: Run Autopep8 and save diff report
       run: |
         autopep8 --diff ./*.py > ./post_traces/autopep8_report.txt
