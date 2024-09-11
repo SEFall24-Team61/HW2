@@ -24,20 +24,21 @@ jobs:
         sudo apt install software-properties-common -y; 
         sudo add-apt-repository ppa:deadsnakes/ppa -y ;
         sudo apt update -y ; sudo apt install python3.13 -y
+    
+    - name: Install distutils for Python 3.13
+      run: sudo apt install python3.13-distutils -y
 
     - name: Install Python dependencies
       run: |
         python3.13 -m pip install --upgrade pip
         pip install pylint
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
+    
     - name: Create directory for Pylint report
-      run: |
-        mkdir -p post_traces
+      run: mkdir -p post_traces
 
     - name: Run Pylint and save report
-      run: |
-        pylint ./*.py > post_traces/pylint_report.txt || true
+      run: pylint ./*.py > post_traces/pylint_report.txt || true
 
     - name: Upload Pylint report as artifact
       uses: actions/upload-artifact@v3
