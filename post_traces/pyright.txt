@@ -1,0 +1,13 @@
+Before changes-
+
+@shrutid02 ➜ /workspaces/HW2 (main) $ pyright rand.py
+WARNING: there is a new pyright version available (v1.1.379 -> v1.1.380).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+0 errors, 0 warnings, 0 informations 
+@shrutid02 ➜ /workspaces/HW2 (main) $ pyright hw2_debugging.py
+WARNING: there is a new pyright version available (v1.1.379 -> v1.1.380).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+0 errors, 0 warnings, 0 informations
+
