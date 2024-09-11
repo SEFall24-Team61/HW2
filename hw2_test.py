@@ -11,3 +11,9 @@ def test_sorted_asc_array():
     expected_sorted_array = [4,15,18,23,35,41]
     actual_sorted_array = merge_sort(array)
     assert actual_sorted_array == expected_sorted_array
+
+def test_sorted_desc_array():
+    array = [91,45,32,17,8,3]
+    expected_sorted_array = [3,8,17,32,45,91]
+    actual_sorted_array = merge_sort(array)
+    assert actual_sorted_array == expected_sorted_array
