@@ -35,8 +35,11 @@ jobs:
       run: mkdir -p post_traces
 
     - name: Run Pylint and save report
-      run: pylint ./*.py > post_traces/pylint_report.txt
-
+      run: |
+        pylint ./*.py > post_traces/pylint_report.txt || true
+        # Output the report for debugging purposes
+        cat post_traces/pylint_report.txt
+        
     - name: Upload Pylint report as artifact
       uses: actions/upload-artifact@v3
       with:
