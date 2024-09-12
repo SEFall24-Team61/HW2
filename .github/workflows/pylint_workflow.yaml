@@ -39,17 +39,6 @@ jobs:
         pylint ./*.py > post_traces/pylint_report.txt || true
         # Output the report for debugging purposes
         cat post_traces/pylint_report.txt
-
-    - name: Set up Git configuration
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-
-    - name: Commit and push Pylint report
-      run: |
-        git add post_traces/pylint_report.txt
-        git commit -m "Add Pylint report"
-        git push
       
     - name: Upload Pylint report as artifact
       uses: actions/upload-artifact@v3
