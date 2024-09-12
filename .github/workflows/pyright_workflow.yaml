@@ -36,3 +36,4 @@ jobs:
     - name: Run Pyright and save report
       run: |
         pyright > post_traces/pyright_report.txt
+        cat post_traces/pyright_report.txt

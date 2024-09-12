@@ -36,7 +36,7 @@ jobs:
 
     - name: Run Pylint and save report
       run: |
-        pylint ./*.py > post_traces/pylint_report.txt || true
+        pylint ./*.py > post_traces/pylint_report.txt
         # Output the report for debugging purposes
         cat post_traces/pylint_report.txt
       
